@@ -1,0 +1,30 @@
+<style type="text/css">
+div.login
+{
+width:320px;
+padding:10px;
+border:5px solid gray;
+margin:0px;
+}
+</style>
+<script language="javascript">
+<h1><center>Log In</center></h1> 
+<center>
+<br>  
+<% form_for @user_session do |form| %>  
+<%= form.error_messages %>  
+<div class="login">
+<p>
+    <%= form.label :username, "Username" %>  
+    <%= form.text_field :username %>  
+</p>
+<p> 
+    <%= form.label :password, "Password&nbsp;" %>  
+    <%= form.password_field :password %>  
+</p>
+<p>
+    <%= form.submit "Submit" %> 
+</p> </div>
+<% end %>
+</br>
+</center>  

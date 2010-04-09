@@ -1,0 +1,29 @@
+<h1>Editing resolution</h1>
+
+<% form_for([@ticket, @resolutions]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :"Resolved by" %><br />
+    <%= f.text_field :resolvedby %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :resolution %><br />
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', ticket_resolution_path(@ticket, @resolution) %> |
+<%= link_to 'Back', ticket_resolutions_path(@ticket) %>

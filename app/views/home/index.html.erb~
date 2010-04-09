@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag 'colors' %>
+</head>
+<body id="ticket" style="background: #AFDCEC;">
+<div id="banner">
+<%= @page_title || "Help Desk Trouble Ticket System" %>
+</div>
+<center>
+<br><br><br>
+<h3>Welcome to the Trouble Ticket System.</h3>
+<br></br>
+
+<%= link_to "Click here to enter", login_path %>
+</br></br></br>
+</center>

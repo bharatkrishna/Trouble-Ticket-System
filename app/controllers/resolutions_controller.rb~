@@ -1,0 +1,53 @@
+class ResolutionsController < ApplicationController
+  def index
+    @ticket = Ticket.find(params[:ticket_id])
+    @comments = @ticket.comments
+  end
+
+  def show
+    @ticket = Ticket.find(params[:ticket_id])
+    @comment = @ticket.comments.find(params[:id])
+  end
+
+  def new
+    @ticket = Ticket.find(params[:ticket_id])
+    @comment = @ticket.comments.build
+  end
+
+  def create
+    @ticket = Ticket.find(params[:ticket_id])
+    @comment = @ticket.comments.build(params[:comment])
+    if @comment.save
+      redirect_to ticket_comment_url(@ticket, @comment)
+    else
+      render :action => "new"
+    end
+  end
+
+  def edit
+    @ticket = Ticket.find(params[:ticket_id])
+    @comment = @ticket.comments.find(params[:id])
+  end
+
+  def update
+    @ticket = Ticket.find(params[:ticket_id])
+    @comment = Comment.find(params[:id])
+    if @comment.update_attributes(params[:comment])
+      redirect_to ticket_comment_url(@ticket, @comment)
+    else
+      render :action => "edit"
+    end
+  end
+
+  def destroy
+    @ticket = Ticket.find(params[:ticket_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to ticket_comments_path(@ticket) }
+      format.xml  { head :ok }
+    end
+  end
+
+end

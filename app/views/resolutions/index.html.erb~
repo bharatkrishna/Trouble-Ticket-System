@@ -1,0 +1,30 @@
+<h1>Resolutions for <%= @ticket.title %></h1>
+
+<table>
+  <tr>
+    <th>Resolved by</th>
+    <th>Resolution</th>
+    <th>Severity Level</th>
+  </tr>
+
+<% for resolution in @resolutions %>
+  <tr>
+    <td><%=h resolution.resolvedby %></td>
+    <td><%=h resolution.body %></td>
+    <td><%=h resolution.slevel %></td>
+    <td><%= link_to 'Show', ticket_resolution_path(@ticket, resolution) %></td>
+    <td>
+        <%= link_to 'Edit', edit_ticket_resolution_path(@ticket, resolution) %>
+    </td>
+    <td>
+        <%= link_to 'Delete', ticket_resolution_path(@ticket, resolution),
+            :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New resolution', new_ticket_resolution_path(@ticket) %>
+<%= link_to 'Back to Ticket', @ticket %>

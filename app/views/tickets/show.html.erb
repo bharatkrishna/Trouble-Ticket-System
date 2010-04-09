@@ -1,0 +1,69 @@
+<h1>Ticket</h1>
+<p>
+  <b>Title:</b>
+  <%=h @ticket.title %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @ticket.name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @ticket.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @ticket.email %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @ticket.created_at %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @ticket.description %>
+</p>
+
+<h1>Resolution</h1>
+<% @ticket.resolutions.each do |c| %>
+  <p>
+    <b>Resolved by:</b>
+    <%=h c.resolvedby %>
+  </p>
+<p>
+  <b>Phone:</b>
+  <%=h c.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h c.email %>
+</p>
+
+<p>
+  <b>Resolved On:</b>
+  <%=h c.created_at %>
+</p>
+  <p>
+    <b>Resolution:</b>
+    <%=h c.body %>
+  </p>
+  <p>
+    <b>Severity Level:</b>
+    <%=h c.slevel %>
+  </p>
+<% end %>
+
+<p>  
+  <% if current_user.role=="admin"  %>  
+    <%= link_to 'Edit', edit_ticket_path(@ticket) %> |  
+<%= link_to 'Manage Resolution', ticket_resolutions_path(@ticket) %> |
+<% elsif current_user.role=="hdesk" %>
+<%= link_to 'Manage Resolution', ticket_resolutions_path(@ticket) %> |
+  <% end %>  
+<%= link_to 'Back', tickets_path %>

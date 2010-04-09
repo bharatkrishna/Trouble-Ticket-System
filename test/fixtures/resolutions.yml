@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  resolvedby: MyString
+  body: MyText
+  ticket: 
+
+two:
+  resolvedby: MyString
+  body: MyText
+  ticket: 

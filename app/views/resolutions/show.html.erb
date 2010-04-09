@@ -1,0 +1,28 @@
+<h1>Resolution for <%= @ticket.title %></h1>
+
+<p>
+  <b>Resolved by:</b>
+  <%=h @resolution.resolvedby %>
+</p>
+<p>
+  <b>Phone:</b>
+  <%=h @resolution.phone %>
+</p>
+<p>
+  <b>Email:</b>
+  <%=h @resolution.email %>
+</p>
+<p>
+  <b>Resolved On:</b>
+  <%=h @resolution.created_at %>
+</p>
+<p>
+  <b>Resolution:</b>
+  <%=h @resolution.body %>
+</p>
+    <b>Severity Level:</b>
+    <%=h @resolution.slevel %>
+  </p>
+
+<%= link_to 'Edit', edit_ticket_resolution_path(@ticket, @resolution) %> |
+<%= link_to 'Back', ticket_resolutions_path(@ticket) %>
