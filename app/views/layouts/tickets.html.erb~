@@ -12,7 +12,7 @@
 <%= @page_title || "Help Desk" %>
 </div>
 <div id="user_nav">  
-<% if current_user.role !="guest"  %>
+<% if current_user.role =="admin"  %>
 <%= link_to "Create New User", new_user_path %>
 <% end %> 
 <% if current_user %>  

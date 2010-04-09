@@ -1,30 +1,28 @@
 <h1>Listing Tickets</h1>
 
-<table cellpadding="5">
+<table id="customers" cellpadding="5">
   <tr>
-    <th align="center">Title&nbsp;&nbsp;</th>
-<!--    <th>Name</th>
-    <th>Phone</th>
-    <th>Email</th> -->
-    <th align="center">Description</th>
+    <th align="center">Title</th>
   </tr></table>
-<table>
+
+<table id="listing" border="0" >
+<tr>
 <% @tickets.each do |ticket| %>
-  <tr>
-    <td width: 62px"><%=h ticket.title %></td>
+<% @a= ticket.title %>
+    <td width='150' style='table-layout:fixed'><%= link_to @a, ticket %></td>
 <!--    <td><%=h ticket.name %></td>
     <td><%=h ticket.phone %></td>
-    <td><%=h ticket.email %></td> -->
-    <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;<%=h ticket.description %></td>
-    <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'View', ticket %></td>
+    <td><%=h ticket.email %></td> 
+    <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;<%=h ticket.description %></td>-->
+  <!--  <td align="center"><%= link_to 'View', ticket %></td> -->
     <% if current_user.role =="admin"  %>  
-    <td align="center"><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-    <td align="center"><%= link_to 'Delete', ticket, :confirm => 'Are you sure?', :method => :delete %>  </td>
+    <td<%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+    <td><%= link_to 'Delete', ticket, :confirm => 'Are you sure?', :method => :delete %> <br> </td>
 <% end %>
   </tr>
-
-</table>
 <% end %>
+</table>
+
 <br />
 
-<%= link_to 'New ticket', new_ticket_path %>
+<b><%= link_to 'Create a new ticket', new_ticket_path %></b>
