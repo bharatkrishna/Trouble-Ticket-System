@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'colors' %>
 </head>
-<body id="ticket" style="background: #AFDCEC;">
+<body id="ticket" style="background: #CCCCCC;">
 <div id="banner">
 <%= @page_title || "Help Desk Trouble Ticket System" %>
 </div>

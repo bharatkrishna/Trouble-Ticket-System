@@ -23,6 +23,14 @@
     <b>Severity Level:</b>
     <%=h @resolution.slevel %>
   </p>
+<p>
+   <b>Time taken to resolve:</b>
 
-<%= link_to 'Edit', edit_ticket_resolution_path(@ticket, @resolution) %> |
-<%= link_to 'Back', ticket_resolutions_path(@ticket) %>
+<% a_date = (@resolution.created_at - @ticket.created_at) %>
+<% datediff= (a_date/3600) %>
+<%=(datediff * 10**3).round.to_f / 10**3 %>
+     hours
+</p>
+
+<b><%= link_to 'Edit', edit_ticket_resolution_path(@ticket, @resolution) %></b> |
+<b><%= link_to 'Back', ticket_resolutions_path(@ticket) %></b>

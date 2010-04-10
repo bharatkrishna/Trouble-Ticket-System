@@ -5,14 +5,19 @@
     <th>Resolved by</th>
     <th>Resolution</th>
     <th>Severity Level</th>
+    <th>Resolved in</th>
   </tr>
 
 <% for resolution in @resolutions %>
   <tr>
     <td><%=h resolution.resolvedby %></td>
     <td><%=h resolution.body %></td>
-    <td><%=h resolution.slevel %></td>
-    <td><%= link_to 'Show', ticket_resolution_path(@ticket, resolution) %></td>
+    <td align="center"><%=h resolution.slevel %></td>
+    <td><% a_date = (resolution.created_at - @ticket.created_at) %>
+	<% datediff= (a_date/3600) %>
+	<%=(datediff * 10**3).round.to_f / 10**3 %>&nbsp;hours</td>
+
+    <td><%= link_to '&nbsp;Show', ticket_resolution_path(@ticket, resolution) %></td>
     <td>
         <%= link_to 'Edit', edit_ticket_resolution_path(@ticket, resolution) %>
     </td>
@@ -26,5 +31,5 @@
 
 <br />
 
-<%= link_to 'New resolution', new_ticket_resolution_path(@ticket) %>
-<%= link_to 'Back to Ticket', @ticket %>
+<b><%= link_to 'New resolution', new_ticket_resolution_path(@ticket) %></b>
+<b><%= link_to 'Back to Ticket', @ticket %></b>

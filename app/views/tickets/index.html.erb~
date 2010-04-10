@@ -1,10 +1,10 @@
 <h1>Listing Tickets</h1>
-
-<table id="customers" cellpadding="5">
+View existing tickets or create a new ticket<br>
+<table id="customers" >
   <tr>
-    <th align="center">Title</th>
+    <th align="center">Ticket Title</th>
   </tr></table>
-
+</br>
 <table id="listing" border="0" >
 <tr>
 <% @tickets.each do |ticket| %>
@@ -25,4 +25,4 @@
 
 <br />
 
-<%= link_to 'Create a new ticket', new_ticket_path %>
+<b><%= link_to 'Create a new ticket', new_ticket_path %></b>

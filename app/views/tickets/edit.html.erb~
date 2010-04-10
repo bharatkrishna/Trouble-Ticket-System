@@ -28,5 +28,5 @@
   </p>
 <% end %>
 
-<b><%= link_to 'Show', @ticket %></b> |
-<b><%= link_to 'Back', tickets_path %></b>
+<%= link_to 'Show', @ticket %> |
+<%= link_to 'Back', tickets_path %>

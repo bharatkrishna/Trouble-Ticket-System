@@ -1,24 +1,27 @@
 class ResolutionsController < ApplicationController
   def index
     @ticket = Ticket.find(params[:ticket_id])
-    @comments = @ticket.comments
+    @resolutions = @ticket.resolutions
   end
 
   def show
     @ticket = Ticket.find(params[:ticket_id])
-    @comment = @ticket.comments.find(params[:id])
+    @resolution = @ticket.resolutions.find(params[:id])
+    @sql = "select (julianday(resolutions.created_at)-julianday(tickets.created_at))*24 from tickets,resolutions where tickets.id=resolutions.ticket_id"
+    ActiveRecord::Base.connection.execute(@sql).extend(Enumerable).to_a 
+    #@slice= @t.to_s
   end
 
   def new
     @ticket = Ticket.find(params[:ticket_id])
-    @comment = @ticket.comments.build
+    @resolution = @ticket.resolutions.build
   end
 
   def create
     @ticket = Ticket.find(params[:ticket_id])
-    @comment = @ticket.comments.build(params[:comment])
-    if @comment.save
-      redirect_to ticket_comment_url(@ticket, @comment)
+    @resolution = @ticket.resolutions.build(params[:resolution])
+    if @resolution.save
+      redirect_to ticket_resolution_url(@ticket, @resolution)
     else
       render :action => "new"
     end
@@ -26,14 +29,14 @@ class ResolutionsController < ApplicationController
 
   def edit
     @ticket = Ticket.find(params[:ticket_id])
-    @comment = @ticket.comments.find(params[:id])
+    @resolution = @ticket.resolutions.find(params[:id])
   end
 
   def update
     @ticket = Ticket.find(params[:ticket_id])
-    @comment = Comment.find(params[:id])
-    if @comment.update_attributes(params[:comment])
-      redirect_to ticket_comment_url(@ticket, @comment)
+    @resolution = resolution.find(params[:id])
+    if @resolution.update_attributes(params[:resolution])
+      redirect_to ticket_resolution_url(@ticket, @resolution)
     else
       render :action => "edit"
     end
@@ -41,11 +44,11 @@ class ResolutionsController < ApplicationController
 
   def destroy
     @ticket = Ticket.find(params[:ticket_id])
-    @comment = Comment.find(params[:id])
-    @comment.destroy
+    @resolution = resolution.find(params[:id])
+    @resolution.destroy
 
     respond_to do |format|
-      format.html { redirect_to ticket_comments_path(@ticket) }
+      format.html { redirect_to ticket_resolutions_path(@ticket) }
       format.xml  { head :ok }
     end
   end

@@ -13,8 +13,23 @@
   <%=h @resolution.email %>
 </p>
 <p>
+  <b>Resolved On:</b>
+  <%=h @resolution.created_at %>
+</p>
+<p>
   <b>Resolution:</b>
   <%=h @resolution.body %>
+</p>
+    <b>Severity Level:</b>
+    <%=h @resolution.slevel %>
+  </p>
+<p>
+   <b>Time taken to resolve:</b>
+
+<% a_date = (@resolution.created_at - @ticket.created_at) %>
+<% datediff= (a_date/3600) %>
+<%=(datediff * 10**3).round.to_f / 10**3 %>
+     hours
 </p>
 
 <%= link_to 'Edit', edit_ticket_resolution_path(@ticket, @resolution) %> |

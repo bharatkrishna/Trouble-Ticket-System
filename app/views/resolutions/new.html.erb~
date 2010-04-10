@@ -20,7 +20,8 @@
     <%= f.text_area :body %>
   </p>
 <%= f.select :slevel, options_for_select(["Low","Medium","High"]) %>
-
+<% @sql = "select (julianday(resolutions.created_at)-julianday(tickets.created_at))*24 from tickets,resolutions where tickets.id=resolutions.ticket_id" %>
+<% timetores= ActiveRecord::Base.connection.execute(@sql) %>
   <p>
     <%= f.submit "Create" %>
   </p>
