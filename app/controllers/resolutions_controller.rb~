@@ -7,9 +7,6 @@ class ResolutionsController < ApplicationController
   def show
     @ticket = Ticket.find(params[:ticket_id])
     @resolution = @ticket.resolutions.find(params[:id])
-    @sql = "select (julianday(resolutions.created_at)-julianday(tickets.created_at))*24 from tickets,resolutions where tickets.id=resolutions.ticket_id"
-    ActiveRecord::Base.connection.execute(@sql).extend(Enumerable).to_a 
-    #@slice= @t.to_s
   end
 
   def new

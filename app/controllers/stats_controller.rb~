@@ -1,0 +1,9 @@
+class StatsController < ApplicationController
+  def index
+    @ticket = Ticket.find(params[:ticket_id])
+    @resolutions = @ticket.resolutions
+    @a_date = (@resolution.created_at - @ticket.created_at)
+    @datediff= (a_date/3600)
+  end
+
+end

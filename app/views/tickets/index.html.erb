@@ -1,6 +1,46 @@
+<style type="text/css">
+#stats
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:25%;
+border-collapse:collapse;
+}
+#stats td 
+{
+font-size:1em;
+border:1px solid #024769;
+padding:3px 7px 2px 7px;
+}
+#stats th 
+{
+font-size:1.1em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#024769;
+color:#ffffff;
+}
+#stats tr.alt td 
+{
+color:#000000;
+background-color:#EAF2D3;
+}
+#listing td 
+{
+color:#000000;
+background-color:#CCCCCC;
+}
+</style>
+
+<% if current_user.role =="admin"  %> 
+<center><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Admin Control Pannel</h2></center>
+<h1>Tickets</h1>
+View existing tickets:<br>
+<% else %>
 <h1>Listing Tickets</h1>
 View existing tickets or create a new ticket<br><br>
-<table id="customers" >
+<% end %>
+<table>
   <tr>
     <th align="center">Ticket Title</th>
   </tr></table>
@@ -9,7 +49,7 @@ View existing tickets or create a new ticket<br><br>
 <tr>
 <% @tickets.each do |ticket| %>
 <% @a= ticket.title %>
-    <td width='150' style='table-layout:fixed'><%= link_to @a, ticket %></td>
+    <td class="alt" width='1250' style='table-layout:fixed'><%= link_to @a, ticket %></td>
 <!--    <td><%=h ticket.name %></td>
     <td><%=h ticket.phone %></td>
     <td><%=h ticket.email %></td> 
@@ -25,4 +65,27 @@ View existing tickets or create a new ticket<br><br>
 
 <br />
 
-<b><%= link_to 'Create a new ticket', new_ticket_path %></b>
+<b><%= link_to 'Create a new ticket', new_ticket_path %></b><br>
+<% if current_user.role =="admin"  %> 
+<h1>Ticket Resolution Statistics</h1>
+<table id="stats">
+<tr><th>&nbsp;</th>
+    <th>Low</th>
+    <th>Medium</th>
+    <th>High</th>
+    <th>Total</th></tr>
+<tr><th># of tickets</th>
+    <td><%= @low %></td>
+    <td><%= @med %></td>
+    <td><%= @high %></td>
+    <td><%= @total %></td></tr>
+<tr><th>% of tickets</th>
+<% @perlow=@low/@total.to_f %>
+<% @permed=@med/@total.to_f %>
+<% @perhigh=@high/@total.to_f %>
+    <td><%= @perlow*100 %></td>
+    <td><%= @permed*100 %></td>
+    <td><%= @perhigh*100 %></td>
+<td><%= @perlow*100+@permed*100+@perhigh*100 %></td></tr>
+</table>
+<% end %>

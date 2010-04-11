@@ -1,0 +1,4 @@
+class Resolution < ActiveRecord::Base
+  belongs_to :ticket
+  named_scope :lowlevel, :conditions => {:slevel => "Low"}
+end

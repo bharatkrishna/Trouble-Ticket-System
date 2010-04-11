@@ -4,7 +4,10 @@ class TicketsController < ApplicationController
   # GET /tickets.xml
   def index
     @tickets = Ticket.all
-
+    @low= Resolution.lowlevel.count
+    @high= Resolution.highlevel.count
+    @med= Resolution.medlevel.count
+    @total=Resolution.count
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @tickets }
