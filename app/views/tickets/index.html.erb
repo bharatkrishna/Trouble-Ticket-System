@@ -33,7 +33,7 @@ background-color:#CCCCCC;
 </style>
 
 <% if current_user.role =="admin"  %> 
-<center><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Admin Control Pannel</h2></center>
+<center><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Admin Control Panel</h2></center>
 <h1>Tickets</h1>
 View existing tickets:<br>
 <% else %>
@@ -68,7 +68,9 @@ View existing tickets or create a new ticket<br><br>
 <b><%= link_to 'Create a new ticket', new_ticket_path %></b><br>
 <% if current_user.role =="admin"  %> 
 <h1>Ticket Resolution Statistics</h1>
-<table id="stats">
+Number and percentage of tickets for each severity level:
+
+<br><br><table id="stats">
 <tr><th>&nbsp;</th>
     <th>Low</th>
     <th>Medium</th>

@@ -17,7 +17,7 @@
 	<% datediff= (a_date/3600) %>
 	<%=(datediff * 10**3).round.to_f / 10**3 %>&nbsp;hours</td>
 
-    <td><%= link_to '&nbsp;Show', ticket_resolution_path(@ticket, resolution) %></td>
+    <td>&nbsp;<%= link_to 'Show', ticket_resolution_path(@ticket, resolution) %></td>
     <td>
         <%= link_to 'Edit', edit_ticket_resolution_path(@ticket, resolution) %>
     </td>
