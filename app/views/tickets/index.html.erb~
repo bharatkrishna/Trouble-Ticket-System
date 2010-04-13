@@ -33,7 +33,7 @@ background-color:#CCCCCC;
 </style>
 
 <% if current_user.role =="admin"  %> 
-<center><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Admin Control Pannel</h2></center>
+<center><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Admin Control Panel</h2></center>
 <h1>Tickets</h1>
 View existing tickets:<br>
 <% else %>
@@ -42,19 +42,23 @@ View existing tickets or create a new ticket<br><br>
 <% end %>
 <table>
   <tr>
+<% if current_user.role !="guest"  %> 
+    <th>Id</th>
+    <th align="center">Ticket Title</th>
+<% else %>
     <th align="center">Ticket Title</th>
   </tr></table>
-
+<% end %>
 <table id="listing" border="0" >
 <tr>
 <% @tickets.each do |ticket| %>
+<% if current_user.role !="guest"  %> 
+<td width='20'><%= ticket.id %></td>
 <% @a= ticket.title %>
     <td class="alt" width='1250' style='table-layout:fixed'><%= link_to @a, ticket %></td>
-<!--    <td><%=h ticket.name %></td>
-    <td><%=h ticket.phone %></td>
-    <td><%=h ticket.email %></td> 
-    <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;<%=h ticket.description %></td>-->
-  <!--  <td align="center"><%= link_to 'View', ticket %></td> -->
+<% else %>
+    <td class="alt" width='1250' style='table-layout:fixed'><%= link_to @a, ticket %></td>
+<% end %>
     <% if current_user.role =="admin"  %>  
     <td<%= link_to 'Edit', edit_ticket_path(ticket) %></td>
     <td><%= link_to 'Delete', ticket, :confirm => 'Are you sure?', :method => :delete %> <br> </td>

@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Resolved by</th>
     <th>Resolution</th>
     <th>Severity Level</th>
@@ -10,6 +11,7 @@
 
 <% for resolution in @resolutions %>
   <tr>
+    <td width='20'><%=h resolution.id %></td>
     <td><%=h resolution.resolvedby %></td>
     <td><%=h resolution.body %></td>
     <td align="center"><%=h resolution.slevel %></td>
