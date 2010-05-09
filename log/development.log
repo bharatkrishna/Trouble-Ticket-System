@@ -28680,3 +28680,847 @@ Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-13 16:13:17) [GE
 Rendering template within layouts/user_sessions
 Rendering user_sessions/new
 Completed in 26ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-17 18:26:33) [GET]
+Rendering home/index
+Completed in 167ms (View: 121, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-17 18:26:36) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-17 18:29:50) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"Admin", "password"=>"admin"}, "authenticity_token"=>"vYOZ48oAPnIEVjo6LSXBbobp3h5Dl+upuPJ35hughrs="}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'admin') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/tickets
+Completed in 201ms (DB: 1) | 302 Found [http://127.0.0.1/user_sessions]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-17 18:29:50) [GET]
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (6.1ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 234ms (View: 159, DB: 9) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-17 18:29:59) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 6) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.8ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 6) [0m
+Completed in 277ms (View: 250, DB: 2) | 200 OK [http://127.0.0.1/tickets/6]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-17 18:30:01) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 45ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-17 18:31:52) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_user (19.5ms)
+Completed in 195ms (View: 176, DB: 1) | 200 OK [http://127.0.0.1/users/new]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-17 18:32:29) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (0.6ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 45ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-17 18:32:36) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 22ms (DB: 1) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-17 18:32:36) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 23ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-17 18:32:43) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"bharat", "password"=>"bharat"}, "authenticity_token"=>"vYOZ48oAPnIEVjo6LSXBbobp3h5Dl+upuPJ35hughrs="}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".username) = 'bharat') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/tickets
+Completed in 24ms (DB: 1) | 302 Found [http://127.0.0.1/user_sessions]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-17 18:32:43) [GET]
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 40ms (View: 5, DB: 3) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-17 18:32:46) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.4ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 40ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-17 18:32:48) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (0.6ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 40ms (View: 6, DB: 3) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#new (for 127.0.0.1 at 2010-04-17 18:33:06) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+Rendering template within layouts/tickets
+Rendering tickets/new
+Completed in 41ms (View: 13, DB: 1) | 200 OK [http://127.0.0.1/tickets/new]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-17 18:33:45) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.7ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 53ms (View: 6, DB: 3) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-17 18:33:46) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 130ms (View: 12, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-17 18:34:11) [GET]
+  [4;35;1mUser Load (7.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 29ms (DB: 7) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-17 18:34:12) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 21ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-17 18:34:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"hdesk", "password"=>"hdesk"}, "authenticity_token"=>"vYOZ48oAPnIEVjo6LSXBbobp3h5Dl+upuPJ35hughrs="}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".username) = 'hdesk') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/tickets
+Completed in 23ms (DB: 1) | 302 Found [http://127.0.0.1/user_sessions]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-17 18:34:32) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (4.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 48ms (View: 10, DB: 6) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-17 18:34:35) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (0.8ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;36;1mResolution Load (0.6ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 111ms (View: 84, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-17 18:34:41) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;35;1mUser Load (2.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mTicket Load (0.8ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;35;1mResolution Load (2.3ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 242ms (View: 204, DB: 6) | 200 OK [http://127.0.0.1/tickets/5/resolutions]
+
+
+Processing ResolutionsController#new (for 127.0.0.1 at 2010-04-17 18:35:13) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (0.5ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/new
+Completed in 135ms (View: 103, DB: 1) | 200 OK [http://127.0.0.1/tickets/5/resolutions/new]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-17 18:36:44) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (0.8ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 42ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/tickets/5/resolutions]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-17 18:36:47) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mTicket Load (0.4ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.5ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 37ms (View: 11, DB: 1) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-17 18:36:58) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (0.5ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 45ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/tickets/5/resolutions]
+
+
+Processing ResolutionsController#show (for 127.0.0.1 at 2010-04-17 18:37:00) [GET]
+  Parameters: {"ticket_id"=>"5", "id"=>"10"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mTicket Load (1.0ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+  [4;35;1mResolution Load (0.5ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions"."id" = 10 AND ("resolutions".ticket_id = 5)) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/show
+Completed in 76ms (View: 41, DB: 2) | 200 OK [http://127.0.0.1/tickets/5/resolutions/10]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-17 18:37:14) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (1.0ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 46ms (View: 12, DB: 3) | 200 OK [http://127.0.0.1/tickets/5/resolutions]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-17 18:37:22) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mTicket Load (0.7ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.5ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 39ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-17 18:37:23) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 116ms (View: 6, DB: 3) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-17 18:37:35) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 25ms (DB: 1) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-17 18:37:35) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 21ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-17 22:44:42) [GET]
+Rendering home/index
+Completed in 117ms (View: 100, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-17 22:44:46) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 56ms (View: 41, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-18 00:08:36) [GET]
+Rendering home/index
+Completed in 160ms (View: 121, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-18 00:08:38) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 94ms (View: 26, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-18 00:08:44) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"bharat", "password"=>"bharat"}, "authenticity_token"=>"gVVD77IiMuk9OULm2dKMicXYaVBeK21qPFahqr42CT8="}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'bharat') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/tickets
+Completed in 210ms (DB: 1) | 302 Found [http://127.0.0.1/user_sessions]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 00:08:44) [GET]
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (0.6ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 256ms (View: 154, DB: 5) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 00:08:48) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.6ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 322ms (View: 277, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 00:08:50) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 74ms (View: 20, DB: 4) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-18 00:09:40) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 21ms (DB: 1) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-18 00:09:40) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 22ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-18 00:09:46) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"Admin", "password"=>"admin"}, "authenticity_token"=>"gVVD77IiMuk9OULm2dKMicXYaVBeK21qPFahqr42CT8="}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'admin') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/tickets
+Completed in 21ms (DB: 1) | 302 Found [http://127.0.0.1/user_sessions]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 00:09:46) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 114ms (View: 12, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 00:09:50) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (0.4ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.6ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 39ms (View: 12, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 00:09:52) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 43ms (View: 10, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 00:11:01) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 41ms (View: 12, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-18 00:11:02) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;35;1mResolution Load (2.1ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 230ms (View: 198, DB: 3) | 200 OK [http://127.0.0.1/tickets/5/resolutions]
+
+
+Processing ResolutionsController#show (for 127.0.0.1 at 2010-04-18 00:11:08) [GET]
+  Parameters: {"ticket_id"=>"5", "id"=>"10"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mTicket Load (0.5ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+  [4;36;1mResolution Load (0.4ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions"."id" = 10 AND ("resolutions".ticket_id = 5)) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/show
+Completed in 75ms (View: 41, DB: 2) | 200 OK [http://127.0.0.1/tickets/5/resolutions/10]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-18 00:11:30) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (0.4ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;35;1mResolution Load (0.5ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 40ms (View: 10, DB: 2) | 200 OK [http://127.0.0.1/tickets/5/resolutions]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 00:11:33) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mTicket Load (0.5ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 42ms (View: 13, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 00:11:35) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (0.6ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 44ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 00:11:50) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 6) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.5ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 6) [0m
+Completed in 109ms (View: 13, DB: 2) | 200 OK [http://127.0.0.1/tickets/6]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-18 00:11:53) [GET]
+  Parameters: {"ticket_id"=>"6"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mTicket Load (0.5ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 6) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 6) [0m
+Completed in 42ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/tickets/6/resolutions]
+
+
+Processing ResolutionsController#show (for 127.0.0.1 at 2010-04-18 00:12:01) [GET]
+  Parameters: {"ticket_id"=>"6", "id"=>"11"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 6) [0m
+  [4;35;1mResolution Load (0.5ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions"."id" = 11 AND ("resolutions".ticket_id = 6)) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/show
+Completed in 107ms (View: 6, DB: 2) | 200 OK [http://127.0.0.1/tickets/6/resolutions/11]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-18 00:12:41) [GET]
+  Parameters: {"ticket_id"=>"6"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mTicket Load (0.5ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 6) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 6) [0m
+Completed in 45ms (View: 14, DB: 2) | 200 OK [http://127.0.0.1/tickets/6/resolutions]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 00:12:46) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mTicket Load (2.0ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 6) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.6ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 6) [0m
+Completed in 45ms (View: 13, DB: 3) | 200 OK [http://127.0.0.1/tickets/6]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 00:12:48) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 45ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-18 13:42:05) [GET]
+Rendering home/index
+Completed in 151ms (View: 121, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-18 13:42:08) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 100ms (View: 84, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-18 13:42:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"bharat", "password"=>"bharat"}, "authenticity_token"=>"YRUfW8P8KBT4f9zGIJ3lUmNOx/gwSlGyTw/E64KFMCs="}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'bharat') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/tickets
+Completed in 824ms (DB: 1) | 302 Found [http://127.0.0.1/user_sessions]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 13:42:33) [GET]
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (0.7ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 340ms (View: 250, DB: 4) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#new (for 127.0.0.1 at 2010-04-18 13:42:45) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+Rendering template within layouts/tickets
+Rendering tickets/new
+Completed in 37ms (View: 12, DB: 1) | 200 OK [http://127.0.0.1/tickets/new]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 13:42:59) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 43ms (View: 6, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 13:43:00) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.4ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;36;1mResolution Load (0.7ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 884ms (View: 858, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 13:43:10) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (0.6ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 41ms (View: 5, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 13:43:12) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.5ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 38ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 13:43:19) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 43ms (View: 6, DB: 3) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-18 13:43:23) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 21ms (DB: 1) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-18 13:43:23) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 20ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-18 13:43:27) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"hdesk", "password"=>"hdesk"}, "authenticity_token"=>"YRUfW8P8KBT4f9zGIJ3lUmNOx/gwSlGyTw/E64KFMCs="}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'hdesk') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/tickets
+Completed in 22ms (DB: 1) | 302 Found [http://127.0.0.1/user_sessions]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 13:43:28) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mTicket Load (0.6ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 41ms (View: 6, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 13:43:32) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.6ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 107ms (View: 15, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-18 13:43:35) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (0.5ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;36;1mResolution Load (1.4ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 257ms (View: 197, DB: 2) | 200 OK [http://127.0.0.1/tickets/5/resolutions]
+
+
+Processing ResolutionsController#edit (for 127.0.0.1 at 2010-04-18 13:43:44) [GET]
+  Parameters: {"ticket_id"=>"5", "id"=>"10"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+  [4;35;1mResolution Load (0.5ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions"."id" = 10 AND ("resolutions".ticket_id = 5)) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/edit
+Completed in 164ms (View: 49, DB: 2) | 200 OK [http://127.0.0.1/tickets/5/resolutions/10/edit]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-18 13:43:48) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (0.4ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 41ms (View: 10, DB: 1) | 200 OK [http://127.0.0.1/tickets/5/resolutions]
+
+
+Processing ResolutionsController#show (for 127.0.0.1 at 2010-04-18 13:43:50) [GET]
+  Parameters: {"ticket_id"=>"5", "id"=>"10"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mTicket Load (0.6ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+  [4;35;1mResolution Load (0.5ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions"."id" = 10 AND ("resolutions".ticket_id = 5)) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/show
+Completed in 211ms (View: 109, DB: 2) | 200 OK [http://127.0.0.1/tickets/5/resolutions/10]
+
+
+Processing ResolutionsController#index (for 127.0.0.1 at 2010-04-18 13:43:52) [GET]
+  Parameters: {"ticket_id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mTicket Load (0.5ms)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/resolutions
+Rendering resolutions/index
+  [4;36;1mResolution Load (0.5ms)[0m   [0;1mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 41ms (View: 10, DB: 1) | 200 OK [http://127.0.0.1/tickets/5/resolutions]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-18 13:43:55) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 21ms (DB: 1) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-18 13:43:55) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 23ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-18 14:46:57) [GET]
+Rendering home/index
+Completed in 171ms (View: 148, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-18 14:46:58) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 62ms (View: 46, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-18 14:47:05) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"bharat", "password"=>"bharat"}, "authenticity_token"=>"jhvwRRN/EDvDQQBKuJvl2s2daQoblgQ9Z8yKIcu18ys="}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'bharat') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/tickets
+Completed in 189ms (DB: 1) | 302 Found [http://127.0.0.1/user_sessions]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 14:47:06) [GET]
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (1.1ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 242ms (View: 139, DB: 6) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 14:47:08) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.6ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 357ms (View: 330, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 14:47:10) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 40ms (View: 6, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-18 14:47:45) [GET]
+Rendering home/index
+Completed in 17ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-18 14:47:46) [GET]
+Rendering template within layouts/user_sessions
+Rendering user_sessions/new
+Completed in 23ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-18 14:47:51) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"username"=>"bharat", "password"=>"bharat"}, "authenticity_token"=>"80vvdKx8zV950bycpeV9QbLeG4c68fNSWZY5MsFij6M="}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'bharat') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/tickets
+Completed in 22ms (DB: 1) | 302 Found [http://127.0.0.1/user_sessions]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 14:47:51) [GET]
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (0.6ms)[0m   [0;1mSELECT * FROM "tickets" [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 42ms (View: 5, DB: 2) | 200 OK [http://127.0.0.1/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2010-04-18 14:47:59) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mTicket Load (0.5ms)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+  [4;35;1mResolution Load (0.6ms)[0m   [0mSELECT * FROM "resolutions" WHERE ("resolutions".ticket_id = 5) [0m
+Completed in 39ms (View: 12, DB: 2) | 200 OK [http://127.0.0.1/tickets/5]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2010-04-18 14:48:01) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mTicket Load (0.6ms)[0m   [0mSELECT * FROM "tickets" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Low') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'High') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "resolutions" WHERE ("resolutions"."slevel" = 'Medium') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "resolutions" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 40ms (View: 6, DB: 2) | 200 OK [http://127.0.0.1/tickets]
