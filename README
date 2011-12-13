@@ -1,8 +1,5 @@
-Trouble Ticket System
----------------------
-
-Bharat Krishna Raghavan
-
+Trouble Ticket System using Ruby on Rails
+------------------------------------------
 
 In the trouble ticket system, the customers post tickets along with their contact information and problem description. Help Desk staff post resolutions to the ticket with their name, contact information, severity level and resolution description.
 
@@ -16,7 +13,6 @@ HelpDesk- Username: hdesk
 Customer- Username: bharat
 	  Password: bharat	
 
-This is an acadamic project. It is not deployment ready product. 
-Hence please report any bugs(and their fixes :P ) to bharatkrishna.r@gmail.com
+This is an academic project. It is not deployment ready product. 
 
 
